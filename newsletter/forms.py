@@ -15,3 +15,8 @@ class SignUpForm(forms.ModelForm):
 	def clean_full_name(self):
 		full_name = self.cleaned_data.get('full_name')
 		return full_name
+
+class ContactForm(forms.Form):
+	full_name = forms.CharField(required=False)
+	email = forms.EmailField()
+	message = forms.CharField()
